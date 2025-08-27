@@ -1,29 +1,38 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit} from "@angular/core";
-import { SpotifyService } from "../../services/spotify.service";
+import {ChangeDetectionStrategy, Component, inject, OnInit} from "@angular/core";
+import {SpotifyService} from "../../services/spotify.service";
+import { Router } from "@angular/router";
 
 @Component({
-    selector: "app-login",
-    imports: [],
-    templateUrl: "./login.component.html",
-    styleUrl: "./login.component.scss",
-    changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-login',
+  imports: [],
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-
 export class LoginComponent implements OnInit {
-    ngOnInit(): void {
-       this.verificarCodigoUrlCallback();
-    }
-    serviceSpotify = inject(SpotifyService);
-    anoAtual = new Date().getFullYear();
- async fazerLogin() {
-const url = await this.serviceSpotify.obterUrlLogin();
-window.location.href = url;
-}
-verificarCodigoUrlCallback() {
+    roteador = inject(Router);
+  ngOnInit(): void {
+    this.verficarCodigoUrlCallback();
+  }
+
+  serviceSpotify = inject(SpotifyService);
+  anoAtual = new Date().getFullYear();
+
+  async fazerLogin() {
+    const url = await this.serviceSpotify.obterUrlLogin();
+    window.location.href = url;
+  }
+
+  async verficarCodigoUrlCallback() {
     const params = new URLSearchParams(window.location.search);
-    const code = params.get('code');
-    if (code) {
-       const sucesso = this.serviceSpotify.definirAcesstoken(code);
+    const codigo = params.get("code");
+
+    if (codigo) {
+      const sucesso = await this.serviceSpotify.definirAcesstoken(codigo);
+
+      if (sucesso) {
+        this.roteador.navigate(['player']);
+      }
     }
-}
+  }
 }

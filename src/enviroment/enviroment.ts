@@ -1,20 +1,20 @@
-export const environment = { //constante visivel sistema interiro 
+export const enviroment = {
   production: false
 }
 
-export const SportifyConfiguration = {
+export const SpotifyConfiguration = {
   clientId: '985ca65f21ec48a8bdf9449f2d3e31f8',
   authEndpoint: 'https://accounts.spotify.com/authorize',
-  apiTokenEdpoint: 'https://accounts.spotify.com/api/token',
+  apiTokenEndpoint: 'https://accounts.spotify.com/api/token',
   redirectUrl: 'http://127.0.0.1:4200/login',
   scopes: [
-    'user-read-currently-playing',
-    'user-read-recently-played',
-    'user-read-playback-state',
-    'user-top-read',
-    'user-modify-playback-state',
-    'user-library-read',
-    'playlist-read-private',
-    'playlist-read-collaborative'
+    'user-read-currently-playing', //Musica que esta tocando
+    'user-read-recently-played', //Musicas que foram tocadas recentemente
+    'user-read-playback-state', //Estado da reproduçao
+    'user-top-read', //Top artistas e musicas
+    'user-modify-playback-state', //Controlar a reproduçao
+    'user-library-read', //Ler biblioteca de musicas
+    'playlist-read-private', //Ler playlists privadas
+    'playlist-read-collaborative' //Ler playlists colaborativas
   ]
 }
