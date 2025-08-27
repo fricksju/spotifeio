@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { authGuard } from './guards/auth.guards';
 
 export const routes: Routes = [
     {
@@ -13,5 +14,6 @@ export const routes: Routes = [
     {
         path:'player', 
         loadChildren: () => import('./pages/player/player.routes').then(rota => rota.routes),
+        canActivate: [authGuard]
     }
 ];
