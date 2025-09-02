@@ -1,14 +1,14 @@
 import {ChangeDetectionStrategy, Component, OnInit} from "@angular/core";
 
 @Component({
-  selector: 'app-painel-esquerdo',
+  selector: 'app-botao-menu',
   standalone: true,
   imports: [],
-  templateUrl: './painel-esquerdo.component.html',
-  styleUrl: './painel-esquerdo.component.scss',
+  templateUrl: './botao-menu.component.html',
+  styleUrl: './botao-menu.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PainelEsquerdoComponent implements OnInit {
+export class BotaoMenuComponent implements OnInit {
 
   ngOnInit(): void {
 
