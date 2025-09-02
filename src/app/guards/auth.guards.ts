@@ -4,7 +4,7 @@ import { CanActivateFn, Router, UrlTree } from "@angular/router";
 export const authGuard: CanActivateFn = async (rota, estado): Promise <boolean | UrlTree> => {
     // Lógica para verificar se o usuário está autenticado
     const roteador = inject(Router);
-    const accessToken = localStorage.getItem("spotify_access_token");
+    const accessToken = localStorage.getItem("access_token");
     if (!accessToken) {
         alert("Acesso negado. Por favor faca login");
         localStorage.removeItem('access_token');
