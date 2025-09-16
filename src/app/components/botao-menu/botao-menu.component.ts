@@ -1,4 +1,6 @@
-import {ChangeDetectionStrategy, Component, input, OnInit, output} from "@angular/core";
+import {ChangeDetectionStrategy, Component, inject, input, OnInit, output} from "@angular/core";
+import {SpotifyService} from "../../services/spotify.service";
+
 
 @Component({
   selector: 'app-botao-menu',
