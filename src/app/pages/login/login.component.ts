@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, inject, OnInit} from "@angular/core";
 import {SpotifyService} from "../../services/spotify.service";
-import { Router } from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-    roteador = inject(Router);
+  roteador = inject(Router);
 
   ngOnInit(): void {
     this.verficarCodigoUrlCallback();
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
       const sucesso = await this.serviceSpotify.definirAcesstoken(codigo);
 
       if (sucesso) {
-        this.roteador.navigateByUrl('/player');
+        this.roteador.navigate(['/player']);
       }
     }
   }

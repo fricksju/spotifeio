@@ -1,9 +1,9 @@
 export const enviroment = {
-    production: true
+  production: false
 }
 
 export const SpotifyConfiguration = {
-  clientId: '57bbe48c63074e1ba1ca922f0f296697',
+  clientId: 'c9f2c4d3792a408fb3bdea1945cb1f80',
   authEndpoint: 'https://accounts.spotify.com/authorize',
   apiTokenEndpoint: 'https://accounts.spotify.com/api/token',
   redirectUrl: 'http://127.0.0.1:4200/login',
