@@ -1,4 +1,6 @@
-import {ChangeDetectionStrategy, Component, Input, input, OnInit} from "@angular/core";
+import {ChangeDetectionStrategy, Component, inject, input, OnInit} from "@angular/core";
+import {SpotifyService} from "../../services/spotify.service";
+
 
 @Component({
   selector: 'app-botao-menu',
@@ -10,8 +12,8 @@ import {ChangeDetectionStrategy, Component, Input, input, OnInit} from "@angular
 })
 export class BotaoMenuComponent implements OnInit {
 
-  nome = input
-  
+  nome = input.required<string>();
+
   ngOnInit(): void {
 
   }
